@@ -1,0 +1,21 @@
+{
+  "name": "api-culaas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {
+    "nodemon": "^1.10.2",
+    "require-all": "^2.0.0",
+    "tv4": "^1.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.2",
+    "serverless-mocha-plugin": "^1.0.0"
+  },
+  "scripts": {
+    "local:search": "nodemon --exec=\"sls deploy function -f search && sls invoke -f search\"",
+    "test": "sls invoke test"
+  },
+  "author": "",
+  "license": "ISC"
+}
