@@ -1,5 +1,5 @@
 # Ensure it maps to aws lambda nodejs version
-box: node:4.3.2-slim
+box: shmedia/wercker-serverless-box:1.0.0-beta.2
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
@@ -15,12 +15,6 @@ build:
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
-    - script:
-        name: echo nodejs information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
-          echo "-----------------------------------------------"
     - npm-install
     - script:
         name: unit test
