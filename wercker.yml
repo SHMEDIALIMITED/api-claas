@@ -29,5 +29,9 @@ deploy:
       name: read version
       code: BUILD_VERSION=v$(node -pe 'JSON.parse(require("fs").readFileSync("package.json")).version')
     - script:
-      name: serverless deploy
+      name: serverless (local) deploy
       code: npm run deploy
+    - script:
+      name: serverless (global) deploy
+      code: serverless deploy
+
