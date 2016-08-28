@@ -41,6 +41,12 @@ functions:
       - http:
           path: search
           method: post
+  random:
+    handler: lib.random
+    events:
+      - http:
+          path: search
+          method: get
 
 #   you can add any of the following events
 #     - s3: ${bucket}

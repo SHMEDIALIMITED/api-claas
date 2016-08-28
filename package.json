@@ -11,7 +11,8 @@
     "serverless-mocha-plugin": "^1.0.0"
   },
   "scripts": {
-    "test": "mocha ./lib/**/*.test.js"
+    "test": "mocha --retry-2 ./lib/**/*.test.js",
+    "test:watch": "mocha --watch -b ./lib/**/*.test.js"
   },
   "author": "",
   "license": "ISC"
