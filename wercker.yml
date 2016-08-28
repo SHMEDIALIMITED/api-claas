@@ -21,7 +21,7 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
           echo "-----------------------------------------------"
-    - wercker/npm-install@1.1.4
+    - npm-install
     - script:
         name: unit test
         code: npm test
