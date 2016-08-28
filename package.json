@@ -14,7 +14,8 @@
   },
   "scripts": {
     "local:search": "nodemon --exec=\"sls deploy function -f search && sls invoke -f search\"",
-    "test": "mocha ./lib/**/*.test.js"
+    "test": "mocha ./lib/**/*.test.js",
+    "deploy": "serverless deploy"
   },
   "author": "",
   "license": "ISC"
