@@ -8,13 +8,10 @@
   },
   "devDependencies": {
     "mocha": "^3.0.2",
-    "serverless": "^1.0.0-beta.2",
     "serverless-mocha-plugin": "^1.0.0"
   },
   "scripts": {
-    "local:search": "nodemon --exec=\"sls deploy function -f search && sls invoke -f search\"",
-    "test": "mocha ./lib/**/*.test.js",
-    "deploy": "serverless deploy"
+    "test": "mocha ./lib/**/*.test.js"
   },
   "author": "",
   "license": "ISC"
