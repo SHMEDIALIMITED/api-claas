@@ -1,0 +1,36 @@
+# http://devcenter.wercker.com/docs/containers/index.html
+box: shmedia/docker-wercker:1.2.1
+# This is the build pipeline. Pipelines are the core of wercker
+# Read more about pipelines on our dev center
+# http://devcenter.wercker.com/docs/pipelines/index.html
+
+# You can also use services such as databases. Read more on our dev center:
+# http://devcenter.wercker.com/docs/services/index.html
+# services:
+#    - id: mongo
+#     # http://devcenter.wercker.com/docs/services/mongodb.html
+build:
+  # The steps that will be executed on build
+  # Steps make up the actions in your pipeline
+  # Read more about steps on our dev center:
+  # http://devcenter.wercker.com/docs/steps/index.html
+  steps:
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+          echo "-----------------------------------------------"
+    - wercker/npm-install@1.1.4
+    - script:
+        name: unit test
+        code: npm test
+
+deploy:
+  steps:
+    - script:
+      name: read version
+      code: BUILD_VERSION=v$(node -pe 'JSON.parse(require("fs").readFileSync("package.json")).version')
+    - script:
+      name: serverless deploy
+      code: npm run deploy
