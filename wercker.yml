@@ -29,6 +29,9 @@ build:
 deploy:
   steps:
     - script:
+      name: show env vars
+      code: env
+    - script:
       name: read version
       code: BUILD_VERSION=v$(node -pe 'JSON.parse(require("fs").readFileSync("package.json")).version')
     - script:
