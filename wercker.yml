@@ -1,5 +1,5 @@
-# http://devcenter.wercker.com/docs/containers/index.html
-box: shmedia/docker-wercker:1.2.1
+# Ensure it maps to aws lambda nodejs version
+box: node:4.3.2-slim
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
